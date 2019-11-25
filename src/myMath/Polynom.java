@@ -11,7 +11,7 @@ import myMath.Monom;
  * 1. Riemann's Integral: https://en.wikipedia.org/wiki/Riemann_integral
  * 2. Finding a numerical value between two values (currently support root only f(x)=0).
  * 3. Derivative
- * Test
+ * 
  * @author Boaz
  *
  */
