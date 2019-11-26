@@ -12,12 +12,21 @@ examples for an incorrect format of Polynom: 5a+1, xx, x^-2, 8x+(2x^4)+1, 9x-6x^
 
 
 Features:
+
 1.Add - adding Polynom/Monom to existing Polynom
+
 2.Substract - Substracting from existing Polynom/Monom
+
 3.F(x) - returns the value of the function of specific point x
+
 4.Derivative
+
 5.Multiplication
+
 6.Eqals- checks if two polynoms/Monom are equal
+
 7.IsZero- checks if a Polynom/Monom is empty
+
 8.Root- finds the root of the Polynom
+
 9.Area- calculates the area of a Polynom in a given range
