@@ -1,4 +1,5 @@
 package myMath;
+
 import java.awt.Point;
 import myMath.Monom;
 import java.util.ArrayList;

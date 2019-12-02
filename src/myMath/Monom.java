@@ -1,5 +1,4 @@
 package myMath;
-
 import java.util.Comparator;
 
 /**
