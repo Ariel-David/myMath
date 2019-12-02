@@ -1,4 +1,6 @@
+
 package myMath;
+
 import java.util.Comparator;
 
 /**
@@ -6,7 +8,7 @@ import java.util.Comparator;
  * see: https://en.wikipedia.org/wiki/Monomial 
  * The class implements function and support simple operations as: construction, value at x, derivative, add and multiply. 
  * @author Boaz
- *  
+ *
  */
 public class Monom implements function{
 	public static final Monom ZERO = new Monom(0,0);
@@ -186,9 +188,12 @@ public class Monom implements function{
 		if(this._coefficient==m._coefficient && this._power==m._power) {
 			return true;
 		}
-		else {
-			return false;
+		else if(this._power==m._power) {
+			if(Math.abs(this._coefficient) - Math.abs(m._coefficient) <= EPSILON){
+				return true;
+			}
 		}
+			return false;
 	}
 	public String toString() {
 		if(get_coefficient() == 0) {

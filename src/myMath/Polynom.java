@@ -1,11 +1,12 @@
 package myMath;
+
 import java.awt.Point;
 import myMath.Monom;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Predicate;
-import myMath.Monom;
 
+import myMath.Monom;
 /**
  * This class represents a Polynom with add, multiply functionality, it also should support the following:
  * 1. Riemann's Integral: https://en.wikipedia.org/wiki/Riemann_integral
@@ -15,7 +16,6 @@ import myMath.Monom;
  * @author Boaz
  *
  */
-
 public class Polynom implements Polynom_able{
 	ArrayList<Monom> polynom;	
 	private static final Monom_Comperator compare = new Monom_Comperator();
@@ -23,9 +23,16 @@ public class Polynom implements Polynom_able{
 	/**
 	 * Zero (empty polynom)
 	 */
-	
 	public Polynom() {
 		polynom = new ArrayList<Monom>();
+	}
+	public Polynom(Polynom pol) {    // Copy constructor
+		polynom = new ArrayList<>();
+		Iterator<Monom> it = pol.iteretor();
+		while(it.hasNext()) {
+			Monom s = new Monom(it.next());
+			polynom.add(s);
+		}
 	}
 
 	/**
@@ -206,7 +213,13 @@ public class Polynom implements Polynom_able{
 	 */
 	@Override
 	public boolean isZero() {
-		return (this.polynom.size() == 0);
+		Iterator<Monom> thisIter = this.iteretor();
+		if(thisIter.next().get_coefficient() == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	@Override
@@ -233,13 +246,7 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public Polynom_able copy() {
-		Polynom_able ab= new Polynom();
-		Iterator<Monom> itr = polynom.iterator();
-		while(itr.hasNext()) {
-			Monom m1= itr.next();
-			ab.add(m1);
-		}	
-		return ab;
+		return new Polynom(this);
 	}
 
 	@Override
