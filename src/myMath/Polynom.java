@@ -130,7 +130,6 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public void add(Monom m1) {
-		// TODO Auto-generated method stub
 		boolean found=false;
 		Monom temp = null;
 		Iterator<Monom> mymonom = this.iteretor();
@@ -139,6 +138,9 @@ public class Polynom implements Polynom_able{
 			if(temp.get_power()==m1.get_power()){
 				temp.add(m1);
 				found = true;
+				if(temp.isZero()) {
+					polynom.remove(temp);
+				}
 				break;
 			}
 		}
