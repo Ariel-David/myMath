@@ -214,7 +214,10 @@ public class Polynom implements Polynom_able{
 	@Override
 	public boolean isZero() {
 		Iterator<Monom> thisIter = this.iteretor();
-		if(thisIter.next().get_coefficient() == 0) {
+		if(this.toString() == "0.0") {
+			return true;
+		}
+		else if(thisIter.next().get_coefficient() == 0) {
 			return true;
 		}
 		else {
