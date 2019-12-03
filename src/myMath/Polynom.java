@@ -214,7 +214,7 @@ public class Polynom implements Polynom_able{
 	@Override
 	public boolean isZero() {
 		Iterator<Monom> thisIter = this.iteretor();
-		if(this.toString() == "0.0") {
+		if(this.toString() == "0") {
 			return true;
 		}
 		else if(thisIter.next().get_coefficient() == 0) {
@@ -320,7 +320,7 @@ public class Polynom implements Polynom_able{
 		String ans = "";
 		Iterator<Monom> it = polynom.iterator();
 		if(!it.hasNext()) {
-			return "0.0";
+			return "0";
 		}
 		ans= ans+it.next();
 		while(it.hasNext()) {
